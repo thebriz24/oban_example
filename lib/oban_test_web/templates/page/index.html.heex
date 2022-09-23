@@ -1,0 +1,22 @@
+<header>
+  <h1>Oban Demo</h1>
+</header>
+<section>
+  <%= form_for :filter, Routes.page_path(@conn, :index), [method: :get], fn f -> %>
+      <%= date_input(f, :date) %>
+      <%= submit("Submit") %>
+  <% end %>
+
+  <ol>
+    <%= for superhero <- @superheroes do %>
+    <li>
+      <%= superhero.name %>
+      <div class="indented">
+        <div>Power: <%= superhero.power %></div>
+        <div>People Saved: <%= people_saved(superhero) %></div>
+      </div>
+    </li>
+    <% end %>
+  </ol>
+
+</section>
