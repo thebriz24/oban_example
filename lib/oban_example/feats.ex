@@ -1,4 +1,4 @@
-defmodule ObanTest.Feats do
+defmodule ObanExample.Feats do
   @moduledoc false
 
   import Ecto.Query, only: [from: 2]
@@ -6,7 +6,7 @@ defmodule ObanTest.Feats do
   alias __MODULE__.{DailyRanking, Superhero, SuperheroDailyStatistics}
   alias __MODULE__.Date, as: FeatsDate
   alias Ecto.Changeset
-  alias ObanTest.Repo
+  alias ObanExample.Repo
 
   def change_daily_ranking(%DailyRanking{} = data), do: DailyRanking.changeset(data, %{})
   def change_daily_ranking(attrs), do: DailyRanking.changeset(attrs)
@@ -22,6 +22,8 @@ defmodule ObanTest.Feats do
         where: d.date == ^date
     )
   end
+
+  def get_daily_ranking_by_date_id(date_id), do: Repo.get_by(DailyRanking, date_id: date_id)
 
   def all_daily_rankings, do: Repo.all(DailyRanking)
   def update_daily_ranking(%Changeset{} = changeset), do: Repo.update(changeset)

@@ -1,9 +1,9 @@
-defmodule ObanTest.Feats.SuperheroDailyStatistics do
+defmodule ObanExample.Feats.SuperheroDailyStatistics do
   @moduledoc false
 
   use Ecto.Schema
   alias Ecto.Changeset
-  alias ObanTest.Feats.{Date, Superhero}
+  alias ObanExample.Feats.{Date, Superhero}
 
   @required ~w(superhero_id date_id people_saved crises_averted)a
 

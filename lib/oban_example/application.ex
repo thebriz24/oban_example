@@ -1,4 +1,4 @@
-defmodule ObanTest.Application do
+defmodule ObanExample.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -9,20 +9,20 @@ defmodule ObanTest.Application do
   def start(_type, _args) do
     children = [
       # Start the Ecto repository
-      ObanTest.Repo,
+      ObanExample.Repo,
       # Start the Telemetry supervisor
-      ObanTestWeb.Telemetry,
+      ObanExampleWeb.Telemetry,
       # Start the PubSub system
-      {Phoenix.PubSub, name: ObanTest.PubSub},
+      {Phoenix.PubSub, name: ObanExample.PubSub},
       # Start the Endpoint (http/https)
-      ObanTestWeb.Endpoint,
+      ObanExampleWeb.Endpoint,
       # Start Oban
-      {Oban, Application.fetch_env!(:oban_test, Oban)}
+      {Oban, Application.fetch_env!(:oban_example, Oban)}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: ObanTest.Supervisor]
+    opts = [strategy: :one_for_one, name: ObanExample.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
@@ -30,7 +30,7 @@ defmodule ObanTest.Application do
   # whenever the application is updated.
   @impl true
   def config_change(changed, _new, removed) do
-    ObanTestWeb.Endpoint.config_change(changed, removed)
+    ObanExampleWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

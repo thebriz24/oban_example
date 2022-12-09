@@ -1,4 +1,4 @@
-defmodule ObanTest.Repo.Migrations.AddSuperheroesTable do
+defmodule ObanExample.Repo.Migrations.AddSuperheroesTable do
   use Ecto.Migration
 
   def change do

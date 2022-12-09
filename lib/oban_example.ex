@@ -1,4 +1,4 @@
-defmodule ObanTest do
+defmodule ObanExample do
   @moduledoc """
   ObanTest keeps the contexts that define your domain
   and business logic.

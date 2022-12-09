@@ -1,4 +1,4 @@
-defmodule ObanTestWeb.Telemetry do
+defmodule ObanExampleWeb.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -31,23 +31,23 @@ defmodule ObanTestWeb.Telemetry do
       ),
 
       # Database Metrics
-      summary("oban_test.repo.query.total_time",
+      summary("oban_example.repo.query.total_time",
         unit: {:native, :millisecond},
         description: "The sum of the other measurements"
       ),
-      summary("oban_test.repo.query.decode_time",
+      summary("oban_example.repo.query.decode_time",
         unit: {:native, :millisecond},
         description: "The time spent decoding the data received from the database"
       ),
-      summary("oban_test.repo.query.query_time",
+      summary("oban_example.repo.query.query_time",
         unit: {:native, :millisecond},
         description: "The time spent executing the query"
       ),
-      summary("oban_test.repo.query.queue_time",
+      summary("oban_example.repo.query.queue_time",
         unit: {:native, :millisecond},
         description: "The time spent waiting for a database connection"
       ),
-      summary("oban_test.repo.query.idle_time",
+      summary("oban_example.repo.query.idle_time",
         unit: {:native, :millisecond},
         description:
           "The time the connection spent waiting before being checked out for the query"
@@ -65,7 +65,7 @@ defmodule ObanTestWeb.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {ObanTestWeb, :count_users, []}
+      # {ObanExampleWeb, :count_users, []}
     ]
   end
 end

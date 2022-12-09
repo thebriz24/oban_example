@@ -1,4 +1,4 @@
-defmodule ObanTestWeb.ErrorHelpers do
+defmodule ObanExampleWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -39,9 +39,9 @@ defmodule ObanTestWeb.ErrorHelpers do
     # should be written to the errors.po file. The :count option is
     # set by Ecto and indicates we should also apply plural rules.
     if count = opts[:count] do
-      Gettext.dngettext(ObanTestWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(ObanExampleWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(ObanTestWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(ObanExampleWeb.Gettext, "errors", msg, opts)
     end
   end
 end

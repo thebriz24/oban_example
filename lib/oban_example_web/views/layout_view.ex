@@ -1,5 +1,5 @@
-defmodule ObanTestWeb.LayoutView do
-  use ObanTestWeb, :view
+defmodule ObanExampleWeb.LayoutView do
+  use ObanExampleWeb, :view
 
   # Phoenix LiveDashboard is available only in development by default,
   # so we instruct Elixir to not warn if the dashboard route is missing.

@@ -1,12 +1,12 @@
-defmodule ObanTestWeb do
+defmodule ObanExampleWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use ObanTestWeb, :controller
-      use ObanTestWeb, :view
+      use ObanExampleWeb, :controller
+      use ObanExampleWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,19 +19,19 @@ defmodule ObanTestWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: ObanTestWeb
+      use Phoenix.Controller, namespace: ObanExampleWeb
 
       import Plug.Conn
-      import ObanTestWeb.Gettext
-      alias ObanTestWeb.Router.Helpers, as: Routes
+      import ObanExampleWeb.Gettext
+      alias ObanExampleWeb.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/oban_test_web/templates",
-        namespace: ObanTestWeb
+        root: "lib/oban_example_web/templates",
+        namespace: ObanExampleWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -45,7 +45,7 @@ defmodule ObanTestWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {ObanTestWeb.LayoutView, "live.html"}
+        layout: {ObanExampleWeb.LayoutView, "live.html"}
 
       unquote(view_helpers())
     end
@@ -80,7 +80,7 @@ defmodule ObanTestWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import ObanTestWeb.Gettext
+      import ObanExampleWeb.Gettext
     end
   end
 
@@ -95,9 +95,9 @@ defmodule ObanTestWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import ObanTestWeb.ErrorHelpers
-      import ObanTestWeb.Gettext
-      alias ObanTestWeb.Router.Helpers, as: Routes
+      import ObanExampleWeb.ErrorHelpers
+      import ObanExampleWeb.Gettext
+      alias ObanExampleWeb.Router.Helpers, as: Routes
     end
   end
 

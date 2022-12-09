@@ -1,9 +1,16 @@
-defmodule ObanTest.DailyRankingProcessor do
+defmodule ObanExample.DailyRankingProcessor do
   @moduledoc false
   use Oban.Worker, queue: :default
-  alias ObanTest.Feats
+  alias ObanExample.Feats
   @impl Oban.Worker
   def perform(%Oban.Job{args: %{"date_id" => date_id}}) do
+    case Feats.get_daily_ranking_by_date_id(date_id) do
+      nil -> digest(date_id)
+      _digest -> {:cancel, "digest already found for this day"}
+    end
+  end
+
+  defp digest(date_id) do
     stats = Feats.all_superhero_daily_statistics_for_date(date_id)
 
     sorted_ids =

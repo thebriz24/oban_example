@@ -1,4 +1,4 @@
-defmodule ObanTest.Repo.Migrations.AddDatesTable do
+defmodule ObanExample.Repo.Migrations.AddDatesTable do
   use Ecto.Migration
 
   def change do

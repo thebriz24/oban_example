@@ -1,11 +1,11 @@
 import Config
 
 # Configure your database
-config :oban_test, ObanTest.Repo,
+config :oban_example, ObanExample.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
-  database: "oban_test_dev",
+  database: "oban_example_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -16,7 +16,7 @@ config :oban_test, ObanTest.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with esbuild to bundle .js and .css sources.
-config :oban_test, ObanTestWeb.Endpoint,
+config :oban_example, ObanExampleWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}, port: 4000],
@@ -54,13 +54,13 @@ config :oban_test, ObanTestWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :oban_test, ObanTestWeb.Endpoint,
+config :oban_example, ObanExampleWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/oban_test_web/(live|views)/.*(ex)$",
-      ~r"lib/oban_test_web/templates/.*(eex)$"
+      ~r"lib/oban_example_web/(live|views)/.*(ex)$",
+      ~r"lib/oban_example_web/templates/.*(eex)$"
     ]
   ]
 

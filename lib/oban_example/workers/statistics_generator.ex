@@ -1,7 +1,7 @@
-defmodule ObanTest.StatisticsGenerator do
+defmodule ObanExample.StatisticsGenerator do
   @moduledoc false
   use Oban.Worker, queue: :default
-  alias ObanTest.{DailyRankingProcessor, Feats}
+  alias ObanExample.{DailyRankingProcessor, Feats}
 
   @impl Oban.Worker
 
@@ -25,7 +25,7 @@ defmodule ObanTest.StatisticsGenerator do
       {:ok, statistics}
     rescue
       Postgrex.Error ->
-        {:error, "statistics already found for this superhero for this day"}
+        {:cancel, "statistics already found for this superhero for this day"}
     end
   end
 

@@ -1,12 +1,12 @@
-defmodule ObanTestWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :oban_test
+defmodule ObanExampleWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :oban_example
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_oban_test_key",
+    key: "_oban_example_key",
     signing_salt: "dcuH2v/Y"
   ]
 
@@ -18,7 +18,7 @@ defmodule ObanTestWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :oban_test,
+    from: :oban_example,
     gzip: false,
     only: ~w(assets fonts images favicon.ico robots.txt)
 
@@ -28,7 +28,7 @@ defmodule ObanTestWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :oban_test
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :oban_example
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
@@ -46,5 +46,5 @@ defmodule ObanTestWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug ObanTestWeb.Router
+  plug ObanExampleWeb.Router
 end

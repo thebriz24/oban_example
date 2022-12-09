@@ -1,9 +1,9 @@
-defmodule ObanTest.Feats.Superhero do
+defmodule ObanExample.Feats.Superhero do
   @moduledoc false
 
   use Ecto.Schema
   alias Ecto.Changeset
-  alias ObanTest.Feats.SuperheroDailyStatistics
+  alias ObanExample.Feats.SuperheroDailyStatistics
 
   @required ~w(name power country)a
 

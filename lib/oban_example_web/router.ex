@@ -1,11 +1,11 @@
-defmodule ObanTestWeb.Router do
-  use ObanTestWeb, :router
+defmodule ObanExampleWeb.Router do
+  use ObanExampleWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_live_flash
-    plug :put_root_layout, {ObanTestWeb.LayoutView, :root}
+    plug :put_root_layout, {ObanExampleWeb.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
@@ -14,14 +14,14 @@ defmodule ObanTestWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", ObanTestWeb do
+  scope "/", ObanExampleWeb do
     pipe_through :browser
 
     get "/", PageController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", ObanTestWeb do
+  # scope "/api", ObanExampleWeb do
   #   pipe_through :api
   # end
 
@@ -38,7 +38,7 @@ defmodule ObanTestWeb.Router do
     scope "/" do
       pipe_through :browser
 
-      live_dashboard "/dashboard", metrics: ObanTestWeb.Telemetry
+      live_dashboard "/dashboard", metrics: ObanExampleWeb.Telemetry
     end
   end
 

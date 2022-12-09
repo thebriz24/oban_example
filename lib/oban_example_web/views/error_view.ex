@@ -1,5 +1,5 @@
-defmodule ObanTestWeb.ErrorView do
-  use ObanTestWeb, :view
+defmodule ObanExampleWeb.ErrorView do
+  use ObanExampleWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

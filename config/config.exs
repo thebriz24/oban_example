@@ -7,25 +7,25 @@
 # General application configuration
 import Config
 
-config :oban_test,
-  ecto_repos: [ObanTest.Repo]
+config :oban_example,
+  ecto_repos: [ObanExample.Repo]
 
-config :oban_test, Oban,
-  repo: ObanTest.Repo,
+config :oban_example, Oban,
+  repo: ObanExample.Repo,
   plugins: [
-    Oban.Plugins.Pruner,
     {Oban.Plugins.Cron,
      crontab: [
-       {"0 12 * * *", ObanTest.StatisticsGenerator}
+       {"@reboot", ObanExample.StatisticsGenerator},
+       {"@daily", ObanExample.StatisticsGenerator}
      ]}
   ],
   queues: [default: 10]
 
 # Configures the endpoint
-config :oban_test, ObanTestWeb.Endpoint,
+config :oban_example, ObanExampleWeb.Endpoint,
   url: [host: "localhost"],
-  render_errors: [view: ObanTestWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: ObanTest.PubSub,
+  render_errors: [view: ObanExampleWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: ObanExample.PubSub,
   live_view: [signing_salt: "VUpLta3z"]
 
 # Configures the mailer
@@ -35,7 +35,7 @@ config :oban_test, ObanTestWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :oban_test, ObanTest.Mailer, adapter: Swoosh.Adapters.Local
+config :oban_example, ObanExample.Mailer, adapter: Swoosh.Adapters.Local
 
 # Swoosh API client is needed for adapters other than SMTP.
 config :swoosh, :api_client, false

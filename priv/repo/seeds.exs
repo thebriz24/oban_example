@@ -1,6 +1,6 @@
-defmodule ObanTest.Seeds do
+defmodule ObanExample.Seeds do
   @moduledoc false
-  alias ObanTest.Feats
+  alias ObanExample.Feats
   require Logger
 
   desired_count = 100

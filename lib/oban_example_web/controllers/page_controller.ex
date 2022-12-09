@@ -1,6 +1,6 @@
-defmodule ObanTestWeb.PageController do
-  use ObanTestWeb, :controller
-  alias ObanTest.Feats
+defmodule ObanExampleWeb.PageController do
+  use ObanExampleWeb, :controller
+  alias ObanExample.Feats
 
   def index(conn, %{"filter" => %{"date" => date}}) do
     with {:ok, parsed} <- Date.from_iso8601(date),
